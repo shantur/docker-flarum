@@ -50,6 +50,9 @@ FLARUM_DEBUG=${FLARUM_DEBUG:-false}
 FLARUM_FORUM_TITLE="${FLARUM_FORUM_TITLE:-Flarum Dockerized}"
 FLARUM_API_PATH="${FLARUM_API_PATH:-api}"
 FLARUM_ADMIN_PATH="${FLARUM_ADMIN_PATH:-admin}"
+FLARUM_ADMIN_USER="${FLARUM_ADMIN_USER:-flarum}"
+FLARUM_ADMIN_PASSWORD="${FLARUM_ADMIN_PASSWORD:-flarum}"
+FLARUM_ADMIN_EMAIL="${FLARUM_ADMIN_EMAIL:-'flarum@docker.local'}"
 FLARUM_POWEREDBY_HEADER="${FLARUM_POWEREDBY_HEADER:-true}"
 FLARUM_REFERRER_POLICY="${FLARUM_REFERRER_POLICY:-same-origin}"
 FLARUM_COOKIE_SAMESITE="${FLARUM_COOKIE_SAMESITE:-lax}"
@@ -159,10 +162,10 @@ databaseConfiguration:
   prefix: ${DB_PREFIX}
   port: ${DB_PORT}
 adminUser:
-  username: flarum
-  password: flarum
-  password_confirmation: flarum
-  email: flarum@flarum.docker
+  username: ${FLARUM_ADMIN_USER}
+  password: ${FLARUM_ADMIN_PASSWORD}
+  password_confirmation: ${FLARUM_ADMIN_PASSWORD}
+  email: ${FLARUM_ADMIN_EMAIL}
 settings:
   forum_title: ${FLARUM_FORUM_TITLE}
 EOL
